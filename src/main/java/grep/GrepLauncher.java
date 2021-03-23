@@ -1,15 +1,16 @@
 package grep;
+
 import org.kohsuke.args4j.*;
 
 import java.io.IOException;
 
 public class GrepLauncher {
-    @Option(name = "-r", metaVar = "regex", required = false)
-    private Boolean regex;
-    @Option(name = "-v", metaVar = "inversion", required = false)
-    private Boolean inversion;
-    @Option(name = "-i", metaVar = "ignore", required = false)
-    private Boolean ignore;
+    @Option(name = "-r", metaVar = "regex")
+    private boolean regex;
+    @Option(name = "-v", metaVar = "inversion")
+    private boolean inversion;
+    @Option(name = "-i", metaVar = "ignore")
+    private boolean ignore;
     @Argument(required = true, metaVar = "file")
     private String word;
     @Argument(required = true, metaVar = "file")
@@ -28,6 +29,7 @@ public class GrepLauncher {
             System.err.println("invalid input");
             parser.printUsage(System.err);
         }
-        Grep.search(file, word);
+        Grep grep = new Grep(regex, inversion, ignore);
+            grep.search(word, file);
     }
 }
