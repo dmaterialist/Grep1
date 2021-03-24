@@ -11,9 +11,9 @@ public class GrepLauncher {
     private boolean inversion;
     @Option(name = "-i", metaVar = "ignore")
     private boolean ignore;
-    @Argument(required = true, metaVar = "file")
+    @Argument(required = true, metaVar = "file", index = 0)
     private String word;
-    @Argument(required = true, metaVar = "file")
+    @Argument(required = true, metaVar = "file", index = 1)
     private String file;
 
     public static void main(String[] args) throws IOException {
