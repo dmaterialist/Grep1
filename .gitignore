@@ -1,3 +1,5 @@
 # Project exclude paths
 /target/
 .idea
+Grep1.iml
+Grep.jar

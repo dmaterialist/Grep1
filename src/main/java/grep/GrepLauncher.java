@@ -30,6 +30,6 @@ public class GrepLauncher {
             parser.printUsage(System.err);
         }
         Grep grep = new Grep(regex, inversion, ignore);
-            grep.search(word, file);
+        grep.search(word, file);
     }
 }
